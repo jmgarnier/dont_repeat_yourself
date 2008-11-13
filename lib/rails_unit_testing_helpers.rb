@@ -24,10 +24,3 @@ module Test
     end
   end
 end
-
-# Add this matcher to RSpec default matchers
-module Spec
-  module Matchers
-    include DontRepeatYourself::UnitTestingHelpers::RailsHelpers
-  end
-end
