@@ -1,4 +1,4 @@
-require 'dont_repeat_yourself'
+require 'dont_repeat_yourself/reporter'
 
 module DontRepeatYourself
 
