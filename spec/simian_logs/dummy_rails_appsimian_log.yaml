@@ -1,0 +1,23 @@
+Similarity Analyser 2.2.22 - http://www.redhillconsulting.com.au/products/simian/index.html
+Copyright (c) 2003-08 RedHill Consulting Pty. Ltd.  All rights reserved.
+Simian is not free unless used solely for non-commercial or evaluation purposes.
+---
+simian:
+  version: "2.2.22"
+  checks:
+    - failOnDuplication: true
+      ignoreCharacterCase: true
+      ignoreCurlyBraces: true
+      ignoreIdentifierCase: true
+      ignoreModifiers: true
+      ignoreStringCase: true
+      threshold: 3
+      sets:
+      summary:
+        duplicateFileCount: 0
+        duplicateLineCount: 0
+        duplicateBlockCount: 0
+        totalFileCount: 0
+        totalRawLineCount: 0
+        totalSignificantLineCount: 0
+        processingTime: 8

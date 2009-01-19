@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+$:.unshift(File.dirname(__FILE__) + '/../lib/') unless $:.include?(File.dirname(__FILE__) + '/../lib/')
+require 'dont_repeat_yourself/cli'
+DontRepeatYourself::CLI.execute

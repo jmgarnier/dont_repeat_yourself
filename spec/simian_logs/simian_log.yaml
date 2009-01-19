@@ -1,0 +1,34 @@
+Similarity Analyser 2.2.22 - http://www.redhillconsulting.com.au/products/simian/index.html
+Copyright (c) 2003-08 RedHill Consulting Pty. Ltd.  All rights reserved.
+Simian is not free unless used solely for non-commercial or evaluation purposes.
+---
+simian:
+  version: "2.2.22"
+  checks:
+Usage: [options] [files]
+    -balanceCurlyBraces[+|-]     Accounts for curly braces when breaking lines
+    -balanceParentheses[+|-]     Accounts for parentheses when breaking lines
+    -balanceSquareBrackets[+|-]  Accounts for square brackets when breaking lines
+    -config=FNAME                Reads the configuration from the specified file
+    -excludes=SPEC               Exlcudes files matching the specified pattern
+    -failOnDuplication[+|-|%]    Exits with a failure return code if duplication detected
+    -formatter=TYPE[:FNAME]      Uses the specified output format when reporting
+    -ignoreBlocks=START:END      Ignores all lines between START/END
+    -ignoreCharacterCase[+|-]    Matches character literals irrespective of case
+    -ignoreCharacters[+|-]       Completely ignores character literals
+    -ignoreCurlyBraces[+|-]      Completely ignores curly braces
+    -ignoreIdentifierCase[+|-]   Matches identifiers irresepctive of case
+    -ignoreIdentifiers[+|-]      Completely ignores identifiers
+    -ignoreLiterals[+|-]         Completely ignores all literals (strings, numbers and characters)
+    -ignoreModifiers[+|-]        Ignores modifiers (public, private, static, etc.)
+    -ignoreNumbers[+|-]          Completely ignores numbers
+    -ignoreRegions[+|-]          Ignores all lines between #region/#endregion
+    -ignoreStringCase[+|-]       Matches string literals irrespective of case
+    -ignoreStrings[+|-]          Completely ignores the contents of strings
+    -ignoreSubtypeNames[+|-]     Matches on similar type names (eg. Reader and FilterReader)
+    -ignoreVariableNames[+|-]    Completely ignores variable names (fields, parameters and locals)
+    -includes=SPEC               Including files matching the specified pattern
+    -language=LANG               Assumes ALL files are in the specified language
+    -reportDuplicateText[+|-]    Prints the duplicate text in reports
+    -threshold=COUNT             Matches will contain at least the specified number of lines
+
