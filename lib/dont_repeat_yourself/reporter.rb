@@ -15,7 +15,10 @@ module DontRepeatYourself
   TEXTMATE_REPORT_DESC  = "to generate an html report with links which open files in the Textmate editor"
   
   REPORT_TYPES = [DEFAULT_REPORT, NETBEANS_REPORT, HTML_REPORT, TEXTMATE_REPORT] unless defined?(DontRepeatYourself::REPORT_TYPES)
-  
+
+  RUBY, RAILS, PLUGIN = "Ruby", "Rails", "Plugin" unless defined?(DontRepeatYourself::RUBY)
+  REPORTER_TYPES = [RUBY, RAILS, PLUGIN] unless defined?(DontRepeatYourself::REPORTER_TYPES)
+
   class ProjectReporterBase
     attr_reader :name, :maximum_number_of_duplicate_lines_i_want_in_my_project, :report_type
       
@@ -78,6 +81,13 @@ module DontRepeatYourself
          DRY Report:\n#{report}\n"
     end                 
     
+    def self.build_reporter(reporter, basedir)
+      case reporter
+        when 'ruby' then DontRepeatYourself::RubyProjectReporter.new(basedir)
+        when 'rails' then DontRepeatYourself::RailsProjectReporter.new(basedir)
+        when 'plugin' then DontRepeatYourself::RailsPluginProjectReporter.new(basedir)
+      end
+    end
     protected       
     
     def run_simian
