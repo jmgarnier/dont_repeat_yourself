@@ -1,0 +1,80 @@
+Must Have:
+
+   Dev Tasks:
+
+- merge fork made by http://github.com/angelic
+- pass features
+- clean that TODO and pending specs and TODO in the code!
+- integrate dont_repeat_yourself report with metric_fu
+
+- use jeweller instead of hoe http://technicalpickles.com/posts/craft-the-perfect-gem-with-jeweler
+- release new version
+- add some magic to check if current directory contains a lib and (test|spec) and use it as basedir
+
+
+*******
+Move to wiki
+
+require File.dirname(__FILE__) + '/../lib/dont_repeat_yourself/reporter'
+
+namespace :dont_repeat_yourself do
+  namespace :report do
+
+    desc 'Copy the dont_repeat_yourself report to the CruiseControl.rb build artefacts folder'
+    task :cruise_control_artefact  do
+      # Missing code to generate the report!
+
+      out = ENV['CC_BUILD_ARTIFACTS']
+      system "mv #{report_filename} #{out}/"
+    end
+
+  end
+end
+
+h3. rake tasks
+
+rake dry:cruise_control_artefact                 # Copy the DRYreport to the CruiseControl.rb build artefacts folder
+rake dry:report:default                          # display the default plain report
+rake dry:report:html                             # generate an DRY_report.html file in the project root folder
+rake dry:report:netbeans                         # display the report in the Output window of the Netbeans IDE (Ctrl+4)
+rake dry:report:textmate                         # to generate an html report with links which open files in the Textmate editor
+rake gems:install_dependencies_dry               # Install correct versions of dependencies for dont_repeat_yourself plugin
+
+
+        - rake file : add dependencies follow ph7 style in selenium-client
+        - => reach 100% coverage (replace ARGV like in cucumber)
+        - follow Patter in XUnit Pattern for test helpers which initialize folders and file names
+        - follow Ruby Design Pattern for Formatter factory
+        - update http://github.com/garnierjm/dry-report/wikis/home & README (rename it to Textile?)
+        - delete project on rubyforge
+        - communicate: email mailing lists ruby & rails
+        - Add an option for separating HTML/CSS related reports, from JS ones and from Ruby ones.
+
+    Communication Tasks:          
+        - publicize in blogs and plugin sites:
+            . Rails wiki
+            . Rails mailing list, ruby mailing list, citcon mailing list (it's probably easy to customize it for other languages)
+            . 2 other Rails plugins sites
+            . wikipedia DRY (also add Simian)
+            . blogs : http://www.google.com/search?q=DRY+Rails&esrch=BetaShortcu
+            . Rails
+
+Nice to have:
+        - merge fork Damien pr Rails 2.3.0 ?
+        - add script/autofeature, add features
+        - HTML treeview report
+        - set up CI server http://runcoderun.com/github
+        - new screencast with Netbeans + Autotest + DRY        
+        - add Aptana RadRails report, vim report, other report, see http://github.com/kwatch/editorkicker/tree/master/ruby/plugin/merb
+
+ENV['EDITOR_KICKER'] = "/Applications/TextMate.app/Contents/Resources/mate -l %s %s"   # for TextMate
+    ENV['EDITOR_KICKER'] = "emacsclient -n +%s %s"    # for Emacs (Don't forget M-x server-start)
+    ENV['EDITOR_KICKER'] = "netbeans %2$s:%1$s"       # for NetBeans
+    ENV['EDITOR_KICKER'] = "java -jar eclipsecall.jar %2$s -G%1$s"  # for EclipseCall plugin
+    ENV['EDITOR_KICKER'] = "open %2$s"                # other
+
+
+        - Add support for bacon expectation & XXX frameworks
+        - add to rails statistics: number of duplicate lines ;-)        
+        - run "java -version" to check java is installed
+        - UML Class & Sequence Diagrams (generated?)
